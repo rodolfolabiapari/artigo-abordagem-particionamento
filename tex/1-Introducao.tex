@@ -1,0 +1,77 @@
+% !TEX root = ../main.tex
+% !TeX encoding = UTF-8
+\section{Introdução} \label{chap:introducao}
+      
+    %\todo[inline]{1) Contextualização: Apresente uma visão da área identificando a importância do contexto q está trabalhando. Introduza os "termos" mais importantes.}
+    
+    %O projeto de Sistemas Embarcados (SE) está cada dia mais complexo \cite{Jozwiak2017}. 
+    %
+    A demanda por curto tempo para disponibilidade de produtos ao mercado somado ao fato de exigirem propriedades como alto desempenho, baixo consumo de energia e alocação de recursos, representam um desafio para projetistas de sistemas \wearables.
+    
+    % wearable
+    Sistemas \Wearables,\ uma subcategoria de Sistemas Embarcados (SE), possuem o propósito de integrar-se ao sistema corporal, expandindo suas capacidades, criando uma integração cada vez mais intensa entre tecnologia e ser humano.
+    %
+    Esses sistemas possuem diversos componentes implementados em \hs\ e ainda é um desafio combinar alto desempenho com baixo consumo de energia maximizando o tempo de uso \cite{Wolf1994, Edwards1994}.
+    %
+    Uma das maneiras de lidar com tais problemas consiste na combinação das funções do processador com os recursos dos Arranjo de Portas Programáveis em Campo (FPGAs, do inglês \textit{Field-Programmable Gates Array}) formando um sistema computacional híbrido.
+    
+    
+    %particionamento
+    Uma decisão que pode ser tomada em nível de implementação nestes sistemas é chamado de Particionamento \HS\ (também abreviado como particionamento) e tem se mostrado promissor aumentando o desempenho destes sistemas \cite{Sass2010, BenHajHassine2017}.
+    
+    %\todo[inline]{3) Descreva o estado da arte atual, sempre referenciando trabalhos importantes.}
+    
+    Alguns trabalhos mostram que, uma implementação customizada em \hardware\ pode prover maior eficiência energética e \speedup, comparado à implementações em \software\ \cite{Zhang2008, BenHajHassine2017, Wolf1994, Canis2011, Stone2010}.
+    %
+    %Em \cite{Jozwiak2017} \todo{[VJP] essa referência está no contexto do seu trabalho? Ou ela somente fala de dipositivos móveis e vestíveis? Se for genérica, sugiro retirar essa frase.}  exibe-se vários estudos sobre dispositivos móveis e \wearables\ e \cite{Trindade2016} afirma que um significante esforço foi posto na área de particionamento de SE nos últimos dez anos.
+    
+    
+    %\todo[inline]{2) Gap: Quais são as questões em aberto, restrições e limitações do estado atual dessa pesquisa.}
+    
+    Entretanto, mesmo com vários estudos relacionados à desempenho com particionamento de SE em plataformas FPGA, não existem estudos que avaliam a melhoria de desempenho especificamente para \wearables\ em plataformas FPGA.
+    
+    
+    %\todo[inline]{4) Propósito+metodologia: Descreva o propósito do seu artigo utilizando para isso uma pitada da sua metodologia.}
+    
+    Esta pesquisa consiste no particionamento de alguns algoritmos candidatos dentro do \wearable\ comparando o desempenho, alocação de recursos e gasto energético de ambas as implementações \hs.
+    %
+    % combinação de fpga com cpu
+    Ao utilizar o FPGA é possível implementar um sistema e acelerá-lo usando recursos de \hardware\ por meio do particionamento, o que melhora o desempenho e eficiência energética \cite{Cong2009, Lo2009, Zhang2008a}.
+    
+    
+    %\subsection{Contribuição}
+    %parece mais objetivo que contribuição
+    %Esta pesquisa consiste numa busca sobre o aprimoramento de desempenho de dispositivos computacionais \wearables\ em \hardwares\ reconfiguráveis, utilizando particionamento \hs\ como meio.
+    %Visa gastos relativos ao uso de recursos em \hardware\ e gasto energético.
+    A principal contribuição deste trabalho é exibir que particionamento \hs\ é uma excelente técnica para a melhoria de desempenho de sistemas \wearables,\ como será exibido.
+    
+    Adicionalmente, algumas contribuições específicas são listadas a seguir:
+    
+    \begin{enumerate}
+        \item 
+        %Apresentação da modelagem do problema de particionamento \hs\ aplicando tal técnica nessa classe de sistemas embarcados, buscando pelo aprimoramento de desempenho;
+        
+        Apresentação de uma modelagem do problema de particionamento aplicado à \wearables,\ buscando maior desempenho;
+        
+        \item 
+        % wearables e particionamento
+        %Introdução de sistemas computacionais \wearables\ na qual possuem restrições de consumo energético e recursos, utilizando uma plataforma FPGA como meio para análise de recursos alocados; 
+        Utilização de plataforma FPGA em sistemas \wearables\ com restrições energéticas e de recursos;
+        
+        
+        \item %Obtenção de pelo menos $9,6\%$ a mais de desempenho em três de quatros algoritmos avaliados, alocando $5,5\%$ de recursos de \hardware\ reconfigurável e aumento de $ 5,4\% $ de gasto energético;
+        Análise de desempenho de quatro algoritmos utilizando particionamento em \hardware\ considerando alocação de recursos e consumo energético.
+        
+        \item 
+        Análise de como as interfaces de comunicação entre \hs\ e otimizações influenciam no desempenho dos \wearables.
+        
+        %\item Os resultados mostram que com o uso da técnica de particionamento \hs\ em pedaços de código do \wearable,\ aumentou-se o desempenho do sistema pelo menos 2,2\%, chegando até em 41,6\% a mais em desempenho.
+    \end{enumerate}
+
+    Avaliou-se algoritmos do sistema \wearable\ analisando o desempenho e alocação de cada um, sendo eles o Estatístico \Ss$_{Es}$, Lagrange \Ss$_{La}$, Números Primos \Ss$_{NP}$ e Risco \Ss$_{Ri}$ e para cada um obteve-se uma melhora de desempenho em relação à sua versão em \software\ de 2,2\%, $41,6\%$, $9,6\%$ e $17,8\%$ respectivamente.
+    
+    As próximas seções foram divididas da seguinte forma: 
+    Seção \ref{chap:revisao_bibliografica} apresenta a informações relevantes para o compreendimento e os trabalhos relacionados. 
+    Seção \ref{chap:design} exibe a metodologia utilizada.
+    Seção \ref{chap:prototipo} descreve o protótipo e o procedimento de testes.
+    Seção \ref{chap:results} exibe e analisa os resultados e a Seção \ref{chap:conclu} conclui e apresenta os trabalhos futuros.

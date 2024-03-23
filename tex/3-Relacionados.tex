@@ -1,0 +1,45 @@
+%!TEX root = ../main.tex
+% !TeX encoding = UTF-8
+\subsection{Trabalhos Relacionados}  \label{chap:relacionados}
+    % Embedded
+    %O desenvolvimento com foco em SE ou microcontroladores já é pesquisado amplamente como os trabalhos de \cite{Ernst1993, Gupta1995, Hardt1995, Gajski1994, Bolsens1997}, publicados na década de 90.
+    
+    Em \cite{Mei2000} além do particionamento, os autores apresentam uma abordagem de escalonamento para SE dinamicamente reconfigurável (DRESs, do inglês \textit{dynamically reconfigurable embedded systems}). % no qual possuem como projeto um processador de propósito geral junto com um FPGA sendo este reconfigurável em tempo de execução para reduzir custos.
+    Neste trabalho os autores fornecem análises dos tempos de configuração e reconfiguração parcial do FPGA e mostram que o algoritmo proposto resolve o problema de particionamento e escalonamento dos DRES.
+    
+    Em \cite{Arato2003} os autores descrevem algumas versões do problema de particionamento para sistemas de tempo real e custo restringido, provando que são problemas $ \mathcal{NP} $-difícil.
+    Adicionalmente, apresentam uma abordagem com programação linear inteira, resolvendo o problema de forma otimizada, e uma abordagem utilizando algoritmo genético, na qual encontram-se soluções próximas ao ótimo global.
+    
+    O trabalho em \cite{Mann2007} descreve uma primeira tentativa para um algoritmo exato para o problema de particionamento.
+    Utiliza um esquema no qual implementa-se a estratégia \textit{branch-and-bound} como um \textit{framework}.
+    %Em sua implementação, realizaram várias investigações para incrementar a eficiência do algoritmo, incluindo várias técnicas sendo elas: \textit{lower bounds based on LP-relaxation}, uma mecânica de inferência customizada, condições não-triviais necessárias baseadas num algoritmo \textit{minimum-cut}, e diferentes heurísticas com passos pré-otimizados.
+    %Este também pode ser generalizado a fim de incluir mais de uma restrição, permitindo o \designer\ prescrever quais itens devem estar em qual nível de projeto.
+    Eles demonstram que problemas de particionamento altamente complexos podem ser resolvidos em tempo razoável.
+    %Citam ao final que o resultado obtido é em entorno de dez minutos mais rápido que algoritmos exatos anteriores baseados em programação linear inteira para os testes realizados.
+    
+    Pesquisas mais recentes, como a de \cite{BenHajHassine2017} procuram aplicar otimizações sobre o tempo de execução e gasto energético para processadores baseados em produtos embarcados, por meio de particionamento.
+    %Propõem alcançar um particionamento de grafos à procurar o melhor conjunto da relação energia e tempo de execução.
+    Comparado com outras heurísticas, o algoritmo mostra-se ser mais adequado para aplicações que necessitam do equilíbrio no \textit{tradeoff}.
+    
+    Trabalhos como o de \cite{Trindade2016} utilizam algoritmos genéticos para solucionar o problema de particionamento em SE.
+    Propõem novas abordagens usando técnicas de verificação baseadas nas teorias de módulo de satisfação (SMT, do inglês \textit{satisfiability modulo theories}).
+    %Apresentam um exemplo de particionamento, modelam e solucionam-o usando três diferentes técnicas sendo a principal ideia é aplicar mo método de verificação SMT ao particionamento \hs, e por fim, comparar os resultados com técnicas de otimizações tradicionais como ILP e GA.
+    
+    
+    %concluindo tudo que foi dito
+    Os trabalhos citados buscam o estudo do desempenho e \design\ de SE no geral por meio de particionamento, mas nenhum com foco em \wearables.
+    
+    
+    Em \cite{Jozwiak2017} os autores apresentam uma extensa revisão da literatura considerando vários aspectos de um SE, bem como suas tecnologias de \design,\ com foco em sistemas móveis modernos incluindo \wearables.
+    %Cita-se dois paradigmas de desenvolvimento para SE sobre sistema multi-processados heterogêneos, sendo eles o de sistemas \textit{life-inspired} e sistemas \textit{quality-driven}.
+   % O \textit{life-inspired} (inspirado pela vida) especifica princípios básicos, características e organizações funcionais e estruturais de um SEe por meio da analogia à vida de um organismo inteligente, além de soluções de mecanismos e arquiteturas de sistemas para implementar tais princípios.
+    %Já o \textit{quality-driven} (orientado pela qualidade) é o \design\ de dispositivos que necessitam satisfazer as exigências de tempo real, baixo consumo de energia, entre outros e assim, especifica qual a nova qualidade do sistema a ser requerida e como esta meta é obtida.
+    %De forma a facilitar a compreensão, \cite{Jozwiak2017} define qualidade de uma solução sistêmica proposto como o total de sua eficácia e eficiência na resolução do problema real.
+    %Eficácia entende-se como o grau em que uma solução atinge seus objetivos e a eficiência o grau em que uma solução usa recursos para realizar seus objetivos e juntas determinam o grau de excelência.
+    %Elas são expressas em termos de parâmetros mensuráveis, o que é necessário para implementar o design \textit{quality-driven}.
+    %Entretanto, é descrito ao final que, enquanto \designers\ aprenderam bastante na construção de plataformas de \hardware\ heterogêneos altamente paralelos, os métodos e ferramentas automatizadas para a sua programação e o paralelismo do algoritmo, bem como o \codesign\ coerente da arquitetura \hs\ ainda são atrasados perante à tecnologia.
+    % wearable fpga
+    Além deste, é possível ver em \cite{Plessl2003, Ahola2007, Abdelhedi2016, Narumi2016, Lee2015} trabalhos que estudam \wearables\ junto de FPGA, mas nenhum deles utilizam a técnica de particionamento como meio para seu \design.
+    
+    % conclusao
+    Este trabalho portanto consiste na análise do problema de particionamento \hs,\ com foco em \design\ de sistemas \wearables\ em plataforma FPGA.
